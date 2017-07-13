@@ -10,7 +10,7 @@
          state {}
          changed? false]
     (let [msgs (map parse-kafka-msg raw-msgs)
-          one-val (reduce into {} msgs)
+          one-val (reduce into msgs)
           new-state (merge state one-val)]
       (when (and (empty? raw-msgs)
                  changed?)
